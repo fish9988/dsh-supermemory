@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "Supermemory 长期记忆",
+    "description": "基于 Supermemory 的跨会话长期记忆：按需语义召回、后台模型自动提炼与去重、提供 memory_search / memory_save / memory_forget 工具与可视化记忆库管理页。"
+  }
+}

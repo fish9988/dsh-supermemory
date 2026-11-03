@@ -1,0 +1,56 @@
+{
+  "name": "dsh-supermemory",
+  "version": "0.1.4",
+  "description": "DSH Supermemory 长期记忆：跨会话自动召回与整理记忆，模型可用 memory_search / memory_save / memory_forget；带记忆库管理页",
+  "type": "module",
+  "license": "MIT",
+  "icon": "./icon.svg",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fish9988/dsh-supermemory.git"
+  },
+  "homepage": "https://github.com/fish9988/dsh-supermemory",
+  "keywords": [
+    "deepseek",
+    "harness",
+    "dsh",
+    "dsh-plugin",
+    "supermemory",
+    "memory",
+    "long-term-memory",
+    "rag"
+  ],
+  "exports": {
+    ".": "./lib/index.js",
+    "./client": "./lib/client.js",
+    "./icon": "./icon.svg",
+    "./locale/*.json": "./locale/*.json",
+    "./cordis.patch.yml": "./cordis.patch.yml",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib",
+    "locale",
+    "icon.svg",
+    "cordis.patch.yml",
+    "README.md",
+    "LICENSE"
+  ],
+  "dsh": {
+    "bundle": { "patch": "./cordis.patch.yml" },
+    "client": {
+      "platform": "web",
+      "immediately": true,
+      "inject": ["@deepseek-ai/dsh-client-ui-slots", "@deepseek-ai/dsh-client-ui-settings", "@deepseek-ai/dsh-client-ui-plugin-manager"],
+      "external": []
+    }
+  },
+  "peerDependencies": { "@deepseek-ai/schemastery": "*" },
+  "peerDependenciesMeta": { "@deepseek-ai/schemastery": { "optional": true } },
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "test": "node --test test/*.test.mjs",
+    "check": "npm run build && npm run test && node scripts/check-bundle.mjs"
+  },
+  "devDependencies": { "esbuild": "0.28.2", "react": "19.3.0", "react-dom": "19.3.0" }
+}

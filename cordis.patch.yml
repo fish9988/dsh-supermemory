@@ -1,0 +1,4 @@
+# 挂载 Supermemory 长期记忆（Host 插件：召回钩子、记忆工具、设置页路由）。
+- insert:
+    - id: supermemory
+      name: dsh-supermemory
